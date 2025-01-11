@@ -17,14 +17,10 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">My project</div>
-      </div>
     </div>
     <script>
-      var canvas = document.querySelector("#unity-canvas");
+        var canvas = document.querySelector("#unity-canvas");
+        var canvas_div = document.querySelector("#unity-container")
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -98,8 +94,11 @@
 
       } else {
           // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+        canvas_div.style.width = "100%";
+        canvas_div.style.height = "100%";
         document.body.style.width = "100%";
         document.body.style.height = "100%";
+        document.body.style.overflow = "hidden";
         canvas.style.width = "100%";
         canvas.style.height = "100%";
       }
